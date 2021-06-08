@@ -1,0 +1,29 @@
+body {
+	font-family: sans-serif;
+	width: 700px;
+}
+
+.column {
+    padding: 5px;
+    width: 48%;
+}
+
+.header-div {
+    border-bottom: 2px #e27138 solid;
+    height: 26px;
+}
+
+.header-div > * {
+    vertical-align: middle;
+}
+
+.header-span {
+    color: #e27138;
+    font-weight: bold;
+    text-overflow: ellipsis;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+}

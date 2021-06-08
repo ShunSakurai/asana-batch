@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link type="text/css" rel="stylesheet" href="popup.css">
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="popup.js"></script>
+    <title>Asana Batch</title>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div class="column">
+            <div class="header-div">
+                <label for="selectWorkspaces">Workspace: </label>
+                <select id="selectWorkspaces"></select>
+            </div>
+
+<!--
+            <h4>Create and select groups</h4>
+            <div>
+                <input type="checkbox" id="checkboxSelectAll">
+                <label for="checkboxSelectAll">Select all groups</label>
+            </div>
+            <div>
+                <input type="checkbox" id="checkboxClearAll">
+                <label for="checkboxClearAll">Clear all groups</label>
+            </div>
+            <hr />
+            <div>
+                <input type="checkbox" id="checkbox0" checked>
+                <label for="checkbox0"><strong>Copy from a task</strong></label>
+            </div>
+-->
+
+            <h4>Copy users from a task</h4>
+            <div>
+                <label for="textReferenceTask">Search task</label>
+                <input type="text" list="datalistReferenceTask" id="textReferenceTask" placeholder="Type task name or URL">
+                <datalist id="datalistReferenceTask"></datalist>
+            </div>
+            <div>
+                <label>Who</label>
+                <input type="radio" id="copyTypeAssignee" name="copy-type" checked><label for="copyTypeAssignee">Assignee</label>
+                <input type="radio" id="copyTypeCollaborators" name="copy-type"><label for="copyTypeCollaborators">Collaborators</label>
+                <input type="radio" id="copyTypeBoth" name="copy-type"><label for="copyTypeBoth">Both</label>
+            </div>
+            <div>
+                <label>Include</label>
+                <input type="checkbox" id="checkboxIncludeParent"><label for="checkboxIncludeParent">Parent</label>
+                <input type="checkbox" id="checkboxIncludeSubtasks"><label for="checkboxIncludeSubtasks">Subtasks</label>
+                <input type="checkbox" id="checkboxIncludeSibling"><label for="checkboxIncludeSibling">Sibling subtasks</label>
+            </div>
+
+<!--
+            <div>
+                <input type="checkbox" id="checkbox1">
+                <label for="checkbox1"><strong>Group1</strong><small>🖋❌</small></label></div>
+            <div>List of users with images</div>
+            <div>
+                <input type="checkbox" id="checkbox2">
+                <label for="checkbox2"><strong>Group2</strong><small>🖋❌</small></label></div>
+            <div>List of users with images</div>
+            <div><button id="buttonAddGroup">+ Add group</button></div>
+-->
+        </div>
+
+        <div class="column">
+            <div class="header-div">
+                <label for="spanTask">Task:</label>
+                <span class="header-span" id="spanTask">(Loading...)</span>
+            </div>
+
+            <h4>Add collaborators</h4>
+            <div>
+                <input type="checkbox" id="checkboxOverwrite">
+                <label for="checkboxOverwrite">Remove any other collaborators</label>
+            </div>
+            <div>
+                <button id="buttonAddCollaborators" disabled>Add selected users as collaborators</button>
+                <span id="resultAddCollaborators"></span>
+            </div>
+<!--
+            <hr />
+
+            <h4>Create subtasks</h4>
+            <div>
+                <label>Insert at</label>
+                <input type="radio" id="subtaskWhereTop" name="subtasks-where"><label for="subtaskWhereTop">Top</label>
+                <input type="radio" id="subtaskWhereBottom" name="subtasks-where"><label for="subtaskWhereBottom">Bottom</label>
+            </div>
+            <div>
+                <label for="textSubtaskName">Input name</label>
+                <input type="text" id="textSubtaskName" placeholder="Subtask name">
+            </div>
+            <div><button id="buttonCreateSubatsks" disabled>Create subtasks</button></div>
+            <hr />
+
+            <h4>Backup data</h4>
+            <div><p>The groups are saved to your browser. <br />It's recommended to regularly take backup of the groups.</p></div>
+            <div>
+                <button id="buttonExport" disabled>Export</button>
+                <button id="buttonImport" disabled>Input</button>
+            </div>
+-->
+        </div>
+    </div>
+</body>
+
+</html>
