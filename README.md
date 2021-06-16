@@ -1,6 +1,6 @@
 # Asana Batch
 
-Unofficial [Google Chrome]() and [Firefox]() extension to enable batch actions on [Asana](https://asana.com/)
+Unofficial [Google Chrome](https://chrome.google.com/webstore/detail/asana-batch/hiokcebclngojlhmjojefhgoakokeijm) and [Firefox]() extension to enable batch actions on [Asana](https://asana.com/)
 
 ## Feature list as well as to-do list
 
@@ -13,11 +13,11 @@ Unofficial [Google Chrome]() and [Firefox]() extension to enable batch actions o
 ## Usage
 
 Chrome:
-- Install it from the [Chrome Web Store]()
+- Install it from the [Chrome Web Store](https://chrome.google.com/webstore/detail/asana-batch/hiokcebclngojlhmjojefhgoakokeijm)
 - You can also `git clone` this repository (or download the repository as a zip file) and load the folder to Google Chrome to install it as a developer
 
 Firefox:
-- Install it from the [Firefox AMO store]()
+- ~~Install it from the [Firefox AMO store]()~~ (coming soon)
 - ~~Asana Navigator doesn't work with Firefox if added as a temporary add-on, because of the limitation of `chrome.storage.sync`~~ (coming soon)
 
 Common:
@@ -40,7 +40,7 @@ I try my best to maintain the quality and safety of this extension, but please u
 ## Feedback and contribution
 
 I'd love to hear from users and developers.
-Please feel free to post feature requests, bug reports, and questions through [GitHub Issues](), [Chrome Web Store](), ~~[addons.mozilla.org](), or [Asana Community Forum]()~~. I'd also welcome pull requests.
+Please feel free to post feature requests, bug reports, and questions through [GitHub Issues](https://github.com/ShunSakurai/asana-batch/issues), [Chrome Web Store](https://chrome.google.com/webstore/detail/asana-batch/hiokcebclngojlhmjojefhgoakokeijm), ~~[addons.mozilla.org](), or [Asana Community Forum]()~~. I'd also welcome pull requests.
 
 ## License
 
