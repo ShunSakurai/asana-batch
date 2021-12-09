@@ -36,7 +36,7 @@
             <h4>Copy users from a task</h4>
             <div>
                 <label for="textReferenceTask">Search task</label>
-                <input type="text" list="datalistReferenceTask" id="textReferenceTask" placeholder="Type task name or URL">
+                <input class="typeahead-task" type="text" list="datalistReferenceTask" id="textReferenceTask" placeholder="Paste task URL">
                 <datalist id="datalistReferenceTask"></datalist>
             </div>
             <div>
@@ -49,7 +49,7 @@
                 <label>Include</label>
                 <input type="checkbox" id="checkboxIncludeParent"><label for="checkboxIncludeParent">Parent</label>
                 <input type="checkbox" id="checkboxIncludeSubtasks"><label for="checkboxIncludeSubtasks">Subtasks</label>
-                <input type="checkbox" id="checkboxIncludeSibling"><label for="checkboxIncludeSibling">Sibling subtasks</label>
+                <input type="checkbox" id="checkboxIncludeSibling" checked><label for="checkboxIncludeSibling">Sibling subtasks</label>
             </div>
 
 <!--

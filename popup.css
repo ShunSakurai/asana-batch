@@ -27,3 +27,7 @@ body {
     display: flex;
     flex-direction: row;
 }
+
+.typeahead-task {
+    width: 230px;
+}

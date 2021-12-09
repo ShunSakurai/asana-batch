@@ -109,29 +109,23 @@ window.addEventListener('load', function() {
   const datalistReferenceTask = document.querySelector('#datalistReferenceTask');
 
   textReferenceTask.addEventListener('input', function() {
+
     const potentialTaskGid = findTaskGid(textReferenceTask.value);
     if (potentialTaskGid) {
       callAsanaApi('GET', `tasks/${potentialTaskGid}`, {}, {}, function(response) {
-        textReferenceTask.value = response.data.name;
-        datalistReferenceTask.innerHTML = '';
-        let optionTask = document.createElement('option');
-        optionTask.id = 'task-' + response.data.gid;
-        optionTask.value = response.data.gid;
-        optionTask.textContent = response.data.name;
-        datalistReferenceTask.appendChild(optionTask);
+        let task = response.data;
+        textReferenceTask.value = task.name + ' - ' + task.gid;
       });
 
-    } else {
-      callAsanaApi('GET', `workspaces/${selectWorkspaces.value}/typeahead`, {type: 'task', query: textReferenceTask.value}, {}, function(response) {
-        datalistReferenceTask.innerHTML = '';
-        response.data.forEach(function(task) {
-          let optionTask = document.createElement('option');
-          optionTask.id = 'task-' + task.gid;
-          optionTask.value = task.gid;
-          optionTask.textContent = task.name;
-          datalistReferenceTask.appendChild(optionTask);
-        });
-      });
+    // } else {
+    //   callAsanaApi('GET', `workspaces/${selectWorkspaces.value}/typeahead`, {type: 'task', query: textReferenceTask.value}, {}, function(response) {
+    //     datalistReferenceTask.innerHTML = '';
+    //     response.data.forEach(function(task) {
+    //       let optionTask = document.createElement('option');
+    //       optionTask.value = task.name + ' TaskGid-' + task.gid;
+    //       datalistReferenceTask.appendChild(optionTask);
+    //     });
+    //   });
     }
   })
 
@@ -142,12 +136,13 @@ window.addEventListener('load', function() {
   const checkboxIncludeSibling = document.querySelector('#checkboxIncludeSibling');
   const checkboxOverwrite = document.querySelector('#checkboxOverwrite');
   const resultAddCollaborators = document.querySelector('#resultAddCollaborators');
+
   buttonAddCollaborators.addEventListener('click', function(event) {
     const hideSpinnerFunction = displaySpinner(resultAddCollaborators);
     const textReferenceTask = document.querySelector('#textReferenceTask');
 
     try {
-      callAsanaApi('GET', `tasks/${textReferenceTask.value}`, {'opt_fields': 'assignee, followers, parent, subtasks.assignee,　subtasks.followers'}, {}, function(response) {
+      callAsanaApi('GET', `tasks/${/\d+$/.exec(textReferenceTask.value)[0]}`, {'opt_fields': 'assignee, followers, parent, subtasks.assignee,　subtasks.followers'}, {}, function(response) {
         const referenceTask = response.data;
 
         if (referenceTask.parent) {
